@@ -9,13 +9,13 @@ While this is a test we would prefer you to think of it as a collaborative exerc
 
 You may use internet searches during the test. We all do it.
 
-Your solution can contain dependencies to publicly available packages (from nuget.org for example). 
+Your solution can contain dependencies to publicly available packages. 
 
 
 ## What do we want you to do? ##
-You will be provided with a skeleton WebApi solution based on a standard VS template that you can extend as you wish.
+You will be provided with a skeleton Java Servlet solution which you can extend as you wish.
 
-We want you to create a REST API for a simple data set that we will provide (**data.json**).
+We want you to create a REST API for a simple data set that we will provide (**resources/data.json**).
 
 The REST API should allow for the following actions on the resource:
  
@@ -35,9 +35,9 @@ You should follow industry best practices and consider:
 - testability
 - security (the API will be publicly accessible)
 - scalability 
-- performance.
+- performance
 
-Ideally at the end of this process your solution will be structured, readable and maintainable; and importantly **executable** on Windows. 
+Ideally at the end of this process your solution will be structured, readable and maintainable. 
 
 
 ## Finally ##
