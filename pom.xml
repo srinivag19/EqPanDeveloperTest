@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.pancredit</groupId>
   <artifactId>EqPancreditDeveloperTest</artifactId>
-  <version>1</version>
+  <version>2</version>
   <packaging>war</packaging>
   <name>EQ Pancredit Developer Test</name>
   <description>EQ Pancredit Developer Test</description>
@@ -21,6 +21,7 @@
     </dependency>
 </dependencies>
   <build>
+    <finalName>${project.artifactId}</finalName>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
