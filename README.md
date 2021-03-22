@@ -1,5 +1,3 @@
-# EqPanDeveloperTest
-
 # Technical Test #
 
 ## Welcome to the Equiniti Credit Services Tech Test ##
