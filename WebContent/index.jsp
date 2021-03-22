@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Helloooooooo JSP</title>
+<title>Equiniti Java Developer Test</title>
 </head>
 <body>
-Helloooooooo JSP
+<h1>Equiniti Java Developer Test</h1>
+Please see README.md for instructions for how to complete
 </body>
 </html>
