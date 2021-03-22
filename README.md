@@ -11,7 +11,7 @@ Your solution can contain dependencies to publicly available packages.
 
 
 ## What do we want you to do? ##
-You will be provided with a skeleton Java Servlet solution which you can extend as you wish.
+You will be provided with a skeleton Java Servlet solution (implementation class is ApiServlet) which you can extend as you wish.  You will be required to build (maven) and deploy (java web server) the code.  The landing page in a web browser is http(s)://server:port/EqPancreditDeveloperTest/ and to see the initial API GET result you can visit http(s)://server:port/EqPancreditDeveloperTest/ApiServlet.
 
 We want you to create a REST API for a simple data set that we will provide (**resources/data.json**).
 
