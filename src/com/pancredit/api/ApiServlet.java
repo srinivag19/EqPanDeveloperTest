@@ -71,9 +71,20 @@ public class ApiServlet extends HttpServlet {
 		response.getWriter().write("Payment created successfully");
 	}
 
-	protected void doPut(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
-		// TODO
-	}
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String paymentId = request.getParameter("id");
+        if (paymentId != null) {
+            Payment updatedPayment = objectMapper.readValue(request.getReader(), Payment.class);
+            boolean updated = paymentService.updatePayment(paymentId, updatedPayment);
+            if (updated) {
+                response.getWriter().write("Payment updated successfully");
+            } else {
+                response.getWriter().write("Payment not found");
+            }
+        } else {
+            response.getWriter().write("Invalid request. Please provide payment ID.");
+        }
+    }
 
 	public void destroy() {
 		// do nothing.
