@@ -17,48 +17,53 @@
 package com.pancredit.api;
 
 //Import required java libraries
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pancredit.dao.impl.PaymentDAOImpl;
+import com.pancredit.model.Payment;
+import com.pancredit.service.PaymentService;
 
 //Extend HttpServlet class
 public class ApiServlet extends HttpServlet {
 
-  
+	/**
+		 * 
+		 */
+	private static final long serialVersionUID = 9111894038723756575L;
+	private PaymentService paymentService;
+    private ObjectMapper objectMapper;
 
-private String message;
+	public void init() throws ServletException {
+		paymentService = new PaymentService(new PaymentDAOImpl());
+        objectMapper = new ObjectMapper();
+	}
 
-public void init() throws ServletException {
-   message = "TODO";
-}
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+        List<Payment> payments = paymentService.getAllPayments();
+        response.getWriter().write(objectMapper.writeValueAsString(payments));
+	}
 
-public void doGet(HttpServletRequest request, HttpServletResponse response)
-   throws ServletException, IOException {
-   
-   // Set response content type
-   response.setContentType("text/html");
+	protected void doDelete(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
+		// TODO
+	}
 
-   // Actual logic goes here.
-   PrintWriter out = response.getWriter();
-   out.println("<h1>" + message + "</h1>");
-}
+	protected void doPost(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
+		// TODO
+	}
 
-protected void doDelete(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException
-{
-  //TODO
-}
+	protected void doPut(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
+		// TODO
+	}
 
-protected void doPost(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException
-{
-  //TODO
-}
-
-protected void doPut(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException
-{
-  //TODO
-}
-
-public void destroy() {
-   // do nothing.
-}
+	public void destroy() {
+		// do nothing.
+	}
 }
