@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 
  */
-public class PaymentDAOImpl {
+public class PaymentDAOImpl implements PaymentDAO {
 
 	private List<Payment> payments;
 	private ObjectMapper objectMapper;
