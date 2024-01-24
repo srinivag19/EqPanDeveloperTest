@@ -38,25 +38,27 @@ public class ApiServlet extends HttpServlet {
 		 */
 	private static final long serialVersionUID = 9111894038723756575L;
 	private PaymentService paymentService;
-    private ObjectMapper objectMapper;
+	private ObjectMapper objectMapper;
 
 	public void init() throws ServletException {
 		paymentService = new PaymentService(new PaymentDAOImpl());
-        objectMapper = new ObjectMapper();
+		objectMapper = new ObjectMapper();
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-        List<Payment> payments = paymentService.getAllPayments();
-        response.getWriter().write(objectMapper.writeValueAsString(payments));
+		List<Payment> payments = paymentService.getAllPayments();
+		response.getWriter().write(objectMapper.writeValueAsString(payments));
 	}
 
 	protected void doDelete(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
 		// TODO
 	}
 
-	protected void doPost(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
-		// TODO
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Payment newPayment = objectMapper.readValue(request.getReader(), Payment.class);
+		paymentService.createPayment(newPayment);
+		response.getWriter().write("Payment created successfully");
 	}
 
 	protected void doPut(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
