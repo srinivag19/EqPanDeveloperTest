@@ -51,9 +51,19 @@ public class ApiServlet extends HttpServlet {
 		response.getWriter().write(objectMapper.writeValueAsString(payments));
 	}
 
-	protected void doDelete(HttpServletRequest pReq, HttpServletResponse pResp) throws ServletException, IOException {
-		// TODO
-	}
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String paymentId = request.getParameter("id");
+        if (paymentId != null) {
+            boolean removed = paymentService.deletePayment(paymentId);
+            if (removed) {
+                response.getWriter().write("Payment deleted successfully");
+            } else {
+                response.getWriter().write("Payment not found");
+            }
+        } else {
+            response.getWriter().write("Invalid request. Please provide payment ID.");
+        }
+    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Payment newPayment = objectMapper.readValue(request.getReader(), Payment.class);
