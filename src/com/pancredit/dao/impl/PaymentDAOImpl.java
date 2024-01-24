@@ -66,14 +66,10 @@ public class PaymentDAOImpl implements PaymentDAO {
 
 			}
 
-		} catch (IOException e) {
-			// Handle IOException
+		} catch (IOException e) {			
 			e.printStackTrace();
-
-		} catch (Exception e) {
-			// Handle other exceptions
+		} catch (Exception e) {			
 			e.printStackTrace();
-
 		}
 		return result;
 	}

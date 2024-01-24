@@ -16,7 +16,7 @@
  */
 package com.pancredit.api;
 
-//Import required java libraries
+
 import java.io.IOException;
 import java.util.List;
 
@@ -30,7 +30,7 @@ import com.pancredit.dao.impl.PaymentDAOImpl;
 import com.pancredit.model.Payment;
 import com.pancredit.service.PaymentService;
 
-//Extend HttpServlet class
+
 public class ApiServlet extends HttpServlet {
 
 	/**
