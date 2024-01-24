@@ -51,6 +51,12 @@
 				<version>3.2.1</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
+					<webResources>
+						<resource>
+							<directory>resources</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+						</resource>
+					</webResources>
 				</configuration>
 			</plugin>
 		</plugins>
