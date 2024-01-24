@@ -61,6 +61,14 @@ public class PaymentDAOImpl {
 		return result;
 	}
 	
+	private void saveDataToJson() {
+		try (Writer writer = new FileWriter(getClass().getClassLoader().getResource("data.json").getFile())) {
+			objectMapper.writeValue(writer, payments);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 
 }
