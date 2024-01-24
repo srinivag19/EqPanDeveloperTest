@@ -57,11 +57,6 @@ public class PaymentDAOImpl implements PaymentDAO {
 
 		// Get the input stream of the JSON file
 		try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data.json")) {
-			System.out.println("path is" + getClass().getClassLoader().getResource("../../resources/data.json"));
-			System.out.println("path 2 is" + getClass().getClassLoader().getResource("data.json"));
-			System.out.println("path 3 is" + getClass().getClassLoader().getResource("WEB-INF/data.json"));
-			System.out.println("path 4 is" + getClass().getClassLoader().getResource("resources"));
-			System.out.println("path 4 is" + getClass().getClassLoader().getResource("WEB-INF"));
 
 			if (inputStream != null) {
 				// Use Jackson's ObjectMapper to parse JSON array
